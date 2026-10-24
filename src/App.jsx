@@ -6,6 +6,8 @@ import Header from "./components/Header";
 import Dashboard from "./pages/Dashboard";
 
 function App() {
+  // F8 · Load saved data on start, save it with useEffect when it changes,
+  // and keep the tab title showing the pending count.
   const [drones, setDrones] = useState(initialDrones);
   const [requests, setRequests] = useState(initialRequests);
 

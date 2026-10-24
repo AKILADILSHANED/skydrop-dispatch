@@ -11,8 +11,9 @@ Build these as separate pull requests to your team's fork. Each one says who usu
 | F5 | Assign a drone | State | `RequestCard.jsx`, `RequestBoard.jsx`, `assignDrone` in `App.jsx` |
 | F6 | The full request board | Lists | `RequestBoard.jsx`, `RequestCard.jsx`, `markDelivered` in `App.jsx` |
 | F7 | A page for every drone | Routes | `main.jsx`, `App.jsx`, `Header.jsx`, `DronePage.jsx`, `DroneCard.jsx` |
+| F8 | Keep the data after a refresh | State | `App.jsx` |
 
-Teams without a Routes expert: the Props expert takes F7 after F2. F5 and F6 both touch `RequestCard.jsx` and `RequestBoard.jsx`, so agree who edits what first.
+Teams without a Routes expert: the Props expert takes F7 after F2. The State expert takes F8 after F5. F5 and F6 both touch `RequestCard.jsx` and `RequestBoard.jsx`, so agree who edits what first.
 
 ---
 
@@ -117,8 +118,22 @@ Only Pending exists. Add the rest of the journey.
 
 ---
 
+## F8 · Keep the data after a refresh
+
+Refresh the page and every new request and assignment is gone. Dispatchers can't work like that.
+
+**Done when:**
+- [ ] A `useEffect` saves `drones` to `localStorage` whenever they change, and another saves `requests`. Each lists exactly what it saves in its dependency array.
+- [ ] On start, the app loads the saved drones and requests, or the starting data if nothing is saved yet.
+- [ ] The browser tab's title shows the pending count, "SkyDrop · 2 pending", and updates whenever it changes. This is a third `useEffect`.
+- [ ] No effect runs in a loop. Check the console: nothing logs over and over.
+
+*Hint:* `localStorage` only stores text: `JSON.stringify` to save, `JSON.parse` to load. Loading can happen in `useState(() => …)`, which runs once on the first render. To start again while testing, clear the site's storage in DevTools → Application.
+
+---
+
 ## Stretch, if your team finishes
 
 - **S1 · Live counts in the header:** available drones, pending requests and delivered today. Work them out from the state; don't store them.
 - **S2 · Search the fleet:** a search box that finds drones by name, ignoring capitals and extra spaces.
-- **S3 · Keep data after a refresh:** save the fleet and requests to `localStorage` and load them on start. (This needs `useEffect`, which you haven't covered yet. Look it up.)
+- **S3 · Reset button:** a "Reset demo data" button that clears the saved data and puts the starting drones and requests back.
