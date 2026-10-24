@@ -5,15 +5,15 @@ import StatusPill from "./StatusPill";
 // F6 · Assigned requests need the drone's name and a "Mark delivered" button.
 function RequestCard({ request }) {
   return (
-    <article className="grid min-w-0 gap-2 rounded-lg border border-slate-200 bg-white p-3">
+    <article className="grid min-w-0 gap-2 rounded-xl border border-line bg-white p-4">
       <div className="flex items-center justify-between gap-2">
-        <p className="font-medium">{request.customer}</p>
+        <p className="font-semibold text-heading">{request.customer}</p>
         <StatusPill status={request.status} />
       </div>
-      <p className="text-sm text-slate-600">
+      <p className="text-sm text-ink-muted">
         {areaLabel(request.areaId)} · {request.weightKg} kg
       </p>
-      <p className="text-xs text-slate-400">
+      <p className="font-mono text-xs text-ink-subtle">
         {request.id} · requested at {request.createdAt}
       </p>
     </article>

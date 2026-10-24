@@ -3,9 +3,9 @@
 // deliveries. If no drone has that id, say so.
 function DronePage() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-8">
-      <h1 className="text-2xl font-semibold">Drone page</h1>
-      <p className="text-slate-600">Not built yet (F7).</p>
+    <main className="mx-auto max-w-3xl px-6 py-10">
+      <h1 className="text-3xl font-semibold tracking-tight text-heading">Drone page</h1>
+      <p className="text-ink-muted">Not built yet (F7).</p>
     </main>
   );
 }

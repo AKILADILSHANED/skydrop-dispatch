@@ -1,13 +1,62 @@
 @import "tailwindcss";
 
+/* STEM Link brand faces, loaded the way stemlink.online loads them. */
+@font-face {
+  font-family: "Founders Grotesk";
+  src: url("/fonts/FoundersGrotesk-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  /* The face has a phantom bottom margin. */
+  ascent-override: 85%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Kode Mono";
+  src: url("/fonts/KodeMono-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* STEM Link design tokens. Use them as Tailwind classes:
+   bg-brand-600, text-heading, text-ink-muted, border-line, bg-sunk,
+   bg-highlight, shadow-cta, font-mono … */
 @theme {
-  --color-brand-50: #f0fdfa;
-  --color-brand-100: #ccfbf1;
-  --color-brand-600: #0d9488;
-  --color-brand-700: #0f766e;
-  --color-brand-900: #134e4a;
+  --font-sans: "Founders Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Kode Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Brand purple: 600 is the main colour (buttons, links, active states). */
+  --color-brand-50: #f5edfe;
+  --color-brand-100: #ebdafd;
+  --color-brand-200: #d6b6fb;
+  --color-brand-300: #b884f7;
+  --color-brand-400: #9a4ff2;
+  --color-brand-500: #8a2aef;
+  --color-brand-600: #7c14eb;
+  --color-brand-700: #6a10cc;
+  --color-brand-800: #530ca0;
+  --color-brand-900: #3d0a75;
+
+  /* Text and surfaces. */
+  --color-heading: #0f034d;
+  --color-ink: #1a1a1a;
+  --color-ink-muted: #5f5f5f;
+  --color-ink-subtle: #8a8a8a;
+  --color-surface: #f8f7f5;
+  --color-sunk: #f1f0ee;
+  --color-line: #e2e1de;
+
+  /* Lime highlight, with dark text on top of it. */
+  --color-highlight: #c0fe06;
+  --color-highlight-ink: #1b1a20;
+
+  --shadow-cta: 0 8px 16px -4px rgb(124 20 235 / 0.3);
+  --shadow-cta-hover: 0 12px 24px -4px rgb(124 20 235 / 0.4);
 }
 
 body {
-  @apply bg-slate-50 text-slate-900 antialiased;
+  @apply bg-surface font-sans text-ink antialiased;
 }
