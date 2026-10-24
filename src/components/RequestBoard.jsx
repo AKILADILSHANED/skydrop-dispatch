@@ -9,7 +9,7 @@ function RequestBoard({ requests }) {
     <section>
       <h2 className="mb-4 text-lg font-semibold">Delivery requests</h2>
       <div className="grid gap-4 md:grid-cols-3">
-        <div className="grid content-start gap-3 rounded-xl bg-slate-100 p-3">
+        <div className="grid min-w-0 content-start gap-3 rounded-xl bg-slate-100 p-3">
           <h3 className="text-sm font-semibold text-slate-600">
             Pending ({pending.length})
           </h3>

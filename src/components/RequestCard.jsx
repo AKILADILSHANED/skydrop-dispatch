@@ -5,7 +5,7 @@ import StatusPill from "./StatusPill";
 // F6 · Assigned requests need the drone's name and a "Mark delivered" button.
 function RequestCard({ request }) {
   return (
-    <article className="grid gap-2 rounded-lg border border-slate-200 bg-white p-3">
+    <article className="grid min-w-0 gap-2 rounded-lg border border-slate-200 bg-white p-3">
       <div className="flex items-center justify-between gap-2">
         <p className="font-medium">{request.customer}</p>
         <StatusPill status={request.status} />
