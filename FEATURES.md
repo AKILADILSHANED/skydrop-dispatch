@@ -22,9 +22,9 @@ Teams without a Routes expert: the Props expert takes F7 after F2. The State exp
 Only the first drone shows. Show all eight.
 
 **Done when:**
-- [ ] Every drone in `initialDrones` has a card.
-- [ ] Each card has a `key` that is unique and never changes (no warning in the browser console).
-- [ ] The heading says how many drones there are: "Fleet (8)".
+- [x] Every drone in `initialDrones` has a card.
+- [x] Each card has a `key` that is unique and never changes (no warning in the browser console).
+- [x] The heading says how many drones there are: "Fleet (8)".
 
 *Hint:* `RequestBoard.jsx` already does this for pending requests. Look at how it uses `map`.
 
